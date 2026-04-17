@@ -175,7 +175,13 @@ jupyter notebook "Starbucks Offer Uplift Modeling.ipynb"
 
 ---
 
-## 👤 Author
+## 📂 Data Source
+
+> **Starbucks simulated dataset** provided by [Udacity](https://www.udacity.com/). Hashed user IDs, no real PII.
+
+---
+
+## �� Author
 
 **Yingru Ma** · Economics Background · Targeting DS / PM Roles
 
