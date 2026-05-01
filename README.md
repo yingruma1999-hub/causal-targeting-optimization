@@ -1,5 +1,5 @@
-<h1 align="center">☕ Starbucks Offer Uplift Modeling</h1>
-<h3 align="center">From Causal Inference to Business ROI</h3>
+<h1 align="center">☕ Marketing Targeting Optimization (Causal Uplift Modeling)</h1>
+<h3 align="center">From Who Gets an Offer → To Who Should Get an Offer</h3>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white" />
@@ -10,29 +10,76 @@
 
 ---
 
-## 🎯 Executive Summary
+## 🚀 Business Impact (TL;DR)
 
-| | |
-|---|---|
-| **The Problem** | Traditional A/B testing overestimates marketing impact by ignoring **selection bias** — users who view offers are already highly engaged and would have purchased anyway. |
-| **The Solution** | Developed a **Causal Machine Learning** framework (T-Learner, Transformed-Outcome Learner & Doubly Robust Estimation) with a dual-path design (Intent-to-Treat + Observational with IPW correction) to isolate the **true incremental effect** of promotions. |
-| **Key Finding** | **~49% of the observed "lift" was pure selection bias**, not a real treatment effect. The genuine causal uplift is **+16.1 pp** (ITT), not the naive +28.4 pp. |
-| **Business Impact** | Segmented 14,825 users into four uplift quadrants. **Targeting only "Persuadables" reduces marketing spend by 33.6%** while maintaining incremental revenue — profitable at a realistic CLV threshold of just $20.41/conversion. |
+- Reduced marketing cost by **~33.6%** by targeting only high-impact users
+- Identified that **~49% of observed lift** was driven by selection bias
+- Upgraded targeting strategy from average lift to **individual causal uplift**
+- Reached positive ROI under realistic CLV assumptions
+
+👉 Instead of sending offers to everyone, we target users who are likely to be influenced.
 
 ---
 
-## 📊 Key Results at a Glance
+## 🎯 Problem & Solution
 
-### Dual Causal Analysis — Why It Matters
+**Problem**  
+Marketing campaigns often send offers broadly, wasting budget on users who would purchase anyway.
+
+👉 The business question is: **Who should we target to maximize ROI?**
+
+**Solution**  
+Built a causal uplift framework to estimate true incremental impact:
+
+- Identified users influenced by promotions (`Persuadables`)
+- Corrected selection bias with causal inference methods
+- Compared targeting strategies using profit and ROI
+
+**Result**  
+Targeting only high-impact users can reduce cost by ~33% while maintaining incremental revenue.
+
+---
+
+## 📊 Key Results
+
+### Key Insight
+
+- Naive observed lift: **+28.4 pp**
+- Bias-corrected causal uplift: **~15–16 pp**
+- **~49%** of naive lift was selection bias
+
+👉 Naive targeting overestimates campaign effectiveness.
+
+### Business Decision
+
+- ❌ Do not target all users uniformly
+- ✅ Target top-uplift segments only
+- 💰 Reduce cost by ~33.6% with minimal revenue trade-off
+
+👉 Focus on **incremental impact**, not total conversion.
+
+---
+
+## 💡 Business Recommendation
+
+- Target `Persuadable` users first (high positive uplift)
+- Avoid over-targeting `Sure Things` (already likely to buy)
+- Never target `Sleeping Dogs` (negative treatment effect)
+
+Use causal uplift, not average treatment effect alone, for production targeting.
+
+---
+
+## 🔍 Technical Validation Snapshot
 
 | Metric | Observational (Naive) | Observational + IPW | **ITT (Clean Causal)** |
 |:-------|:---------------------:|:-------------------:|:----------------------:|
 | Treatment definition | Viewed offer | Viewed offer | **Received offer** |
-| ATE estimate | 0.284 ❌ inflated | 0.144 ✅ corrected | **0.161 ✅ gold standard** |
-| Selection bias? | ~49% of estimate | Removed | N/A (randomized) |
+| ATE estimate | 0.284 ❌ inflated | 0.144 ✅ corrected | **0.161 ✅ benchmark** |
+| Selection bias | ~49% of estimate | Corrected | N/A (randomized) |
 | SRM check | Not applicable | Not applicable | ✅ Pass (p=0.26) |
 
-> **The two independent approaches (randomization-based ITT = 0.161, propensity-score IPW = 0.144) converge, providing strong evidence that the true causal effect is ~15–16 pp.**
+---
 
 ### ROI Comparison: Targeting Strategies
 
@@ -43,7 +90,7 @@
 | C: Persuadables only | 9,839 | $24,420 | $36,602 | −$2,054 | −8.4% |
 | D: Exclude Sleeping Dogs | 14,419 | $35,779 | $48,810 | −$1,617 | −4.5% |
 
-> 💡 At $20/conversion (single-transaction view), strategies are marginally negative. **Strategy B breaks even at just $20.41/conversion** — trivially exceeded by Starbucks' actual CLV (~$14K/customer). All positive-CATE segments are **massively profitable** in a CLV framework.
+> 💡 At $20/conversion (single-transaction view), strategies are marginally negative. **Strategy B breaks even at $20.41/conversion** — far below Starbucks-like CLV assumptions, making uplift targeting economically robust in practice.
 
 ---
 
@@ -181,8 +228,8 @@ jupyter notebook "Starbucks Offer Uplift Modeling.ipynb"
 
 ---
 
-## �� Author
+## 👤 Author
 
-**Yingru Ma** · Economics Background · Targeting DS / PM Roles
+**Yingru Ma** · Data Analyst | Experimentation & Causal Inference
 
 [![GitHub](https://img.shields.io/badge/GitHub-yingruma1999--hub-181717?logo=github)](https://github.com/yingruma1999-hub)
