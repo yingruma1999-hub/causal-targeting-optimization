@@ -180,7 +180,7 @@ Use causal uplift, not average treatment effect alone, for production targeting.
 ## 🗂 Project Structure
 
 ```
-uplift-ab-test/
+causal-targeting-optimization/
 ├── Starbucks Offer Uplift Modeling.ipynb   # Full analysis notebook (29 cells)
 ├── README.md                               # ← You are here
 ├── interview_prep_thinking_process.md      # Detailed thinking process for interviews
@@ -201,8 +201,8 @@ uplift-ab-test/
 
 ```bash
 # Clone
-git clone https://github.com/yingruma1999-hub/starbucks-uplift-modeling.git
-cd starbucks-uplift-modeling
+git clone https://github.com/yingruma1999-hub/causal-targeting-optimization.git
+cd causal-targeting-optimization
 
 # Install dependencies
 pip install pandas numpy matplotlib seaborn scikit-learn xgboost scipy
